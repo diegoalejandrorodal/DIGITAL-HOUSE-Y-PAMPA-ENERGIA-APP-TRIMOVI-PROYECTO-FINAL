@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('partials/head', {titulo}) %>
+
+    <body class="">
+        <%- include('partials/header1')%>
+            <main class="register-form">
+                <div style="height: 10px;"></div>
+
+                <div class="form-container">
+                    <h1>Perfil de usuario</h1>
+                    <hr>
+                        <form action="/user/update/<%= user.id %>?_method=PUT" method="POST" class="form-ad" id="form" enctype="multipart/form-data">
+                            <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div style="width: 200px;" class="mx-auto">
+                                <img src="/design/images/avatars/<%= session.avatar %>" alt="Avatar image"
+                                    id="previewImage">
+                            </div>
+                            <label for="changeImage" class="btn btn-submit mt-3 pt-2 h3"
+                                style="margin-right: 10px;">Cambiar imagen</label>
+                            <input type="file" hidden id="changeImage" name="avatarimage">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-8">
+                           
+                                <div class="mb-3 column">
+                                    <input class="input-style" type="name" name="name" id="name"placeholder="Ingrese su Nombre"
+                                        value="<%= user.name %>">
+                                    <% if (typeof errors !="undefined" && errors.name) { %>
+                                        <span class="text-danger profile" id="nameErrors">
+                                            <%= errors.name.msg %>
+                                        </span>
+                                        <% } %>
+                                </div>
+
+                                <div class="mb-3 column">
+                                    <input class="input-style" type="surname" name="lastname" id="lastname"
+                                        placeholder="Ingrese su Apellido" value="<%= user.lastname %>">
+                                    <% if (typeof errors !="undefined" && errors.lastname) { %>
+                                        <span class="text-danger profile" id="lastnameErrors">
+                                            <%= errors.lastname.msg %>
+                                        </span>
+                                        <% } %>
+                                </div>
+
+                                <div class="mb-3 column">
+                                    <input class="input-style" type="email" name="email" id="email" value="<%= user.email %>"
+                                        readonly>
+                                   
+                                </div>
+
+                                <div class="mb-3 column">
+                                    <input class="input-style" type="text" name="phone" id="phone" placeholder="Teléfono"
+                                        value="<%= user.phone %>">
+                                    <% if (typeof errors !="undefined" && errors.phone) { %>
+                                        <span class="text-danger profile" id="phoneErrors">
+                                            <%= errors.phone.msg %>
+                                        </span>
+                                        <% } %>
+                                </div>
+                                <div class="mb-3 column">
+                                    <input class="input-style" type="date" name="date" id="date" value="<%= user.date %>">
+                                    <% if (typeof errors !="undefined" && errors.date) { %>
+                                        <span class="text-danger profile" id="dateErrors">
+                                            <%= errors.date.msg %>
+                                        </span>
+                                        <% } %>
+                                </div>
+
+                                <button type="submit" class="btn btn-submit" id="submit" style="margin-right: 10px;">Guardar
+                                    cambios</button>
+                                    <span class="text-danger profile" id="submitErrors"></small>
+                                       
+
+                        </div>
+                    </div>
+
+                        </form>
+                </div>
+                </div>
+            </main>
+            <%- include('partials/footer1') %>
+
+                <script>
+                    let inputChangeImage = document.getElementById('changeImage');
+                    let vistaPrevia = document.getElementById('previewImage')
+                    inputChangeImage.addEventListener('change', (e) => {
+                        let reader = new FileReader();
+                        reader.readAsDataURL(e.target.files[0])
+                        reader.onload = () => {
+                            vistaPrevia.src = reader.result
+                        }
+                    })
+                </script>
+<!--<script src="/js/profileValidatorFront.js"></script>-->
+
+</body>
+</html>

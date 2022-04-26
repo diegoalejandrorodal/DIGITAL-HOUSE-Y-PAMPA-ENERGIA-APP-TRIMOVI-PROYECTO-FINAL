@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<%- include ('./partials/head') %>
+
+  <body class="login-body">
+    <main class="login-container">
+      <div class="login">
+       <article class="fondo">
+          <div style="width: 200px;" class="mb-4">
+            <a href="/"><img src="/design/images/icons/logo.png" alt="User"></a>
+          </div>   
+          
+          <form class="aux" id="form" action="/user/login" method="POST">
+
+            <div class="mb-4 column">
+              <input class="inp" id="email" type="email" name="email" placeholder="Ingrese su Usuario">
+
+              <% if (locals.errors && errors.email) { %>
+                <small class="text-danger" id="emailErrors">
+                  <%= errors.email.msg %>
+                </small>
+                <% } %>
+
+            </div>
+
+            <div class="mb-4 column">
+              <input class="inp" id="pass" type="password" name="pass" value="" placeholder="Ingrese su Contraseña"><br>
+              <% if (locals.errors && errors.pass) { %>
+                <small class="text-danger profile" id="passErrors">
+                  <%= errors.pass.msg %>
+                </small>
+                <% } %>
+            </div>
+
+            <% if (locals.errors && errors.custom) { %>
+              <small class="text-danger profile" id="submitErrors">
+                <%= errors.custom.msg %>
+              </small>
+              <% } %>
+            <div class="mb-4">
+
+                <input type="checkbox" name="remember" id="check">
+                  <label for="check">Recordar</label>
+            </div>
+            
+            <div class="mb-4">
+                  <button class="btn btn-submit" type="submit">INICIAR SESION</button>
+
+            </div>
+
+          </form>
+
+          <h3 class="mb-3" id="login-txt">¿Has olvidado tu contraseña?</h3>
+          <h2 class="mb-3"><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="he">RECUPERAR CONTRASEÑA</a></h2>
+          <h3 class="mb-3" id="login-txt">¿No tienes cuenta aún?</h3>
+          <h2><a href="/user/register" class="he">REGISTRARSE</a></h2>
+      
+</article>
+</main>
+<script src="/js/loginFront.js"></script>
+</body>
+
+</html>

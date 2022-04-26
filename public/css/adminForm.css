@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(90deg, rgb(192, 190, 190) 0%, rgb(116, 164, 179) 100%);
+}
+
+a{
+    color: white;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+h1{
+    text-align: center;
+}
+
+.admin-productNew .form{
+    padding: 10px 0;
+    /* margin: 200px; */
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+
+}
+
+.admin-productNew .form{
+    padding: 2rem;
+    display: flex;
+   flex-direction: column;
+   margin: 1rem;
+   justify-content: center;
+   align-items: center;
+   
+}
+
+.admin-productNew .check-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.addProductAdmin .box-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+/* input*/
+
+.input-container,
+.buttom-cont{
+    display: flex;
+    margin: 1rem;
+    width: 100%;
+    flex-direction: column;
+    
+
+}
+
+
+span.error-message {
+    color: red;
+    margin: 0 auto;
+    font-size: 15px;
+    margin: 8px auto;
+    display: none;
+}
+
+input.input-style{
+    border-radius: 6px;
+    border:none;
+    padding: .5rem;
+
+}
+
+
+button.he{
+    
+    margin: 1.5rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    
+
+
+}
+    
+/*estilos crud diego*/

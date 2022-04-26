@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include ('partials/head', {titulo}) %>
+
+    <body>
+
+        <!-- header -->
+        <%- include('./partials/header1') %>
+            <!--  -->
+
+            <main class="home-container">
+                <!-- banner -->
+                <div class="banner">
+                    <%- include('./partials/carrusel', {banners}) %> 
+                </div>
+            
+                <!-- seccion principal -->
+                <div class="main-section flex">
+                    <!-- peliculas -->
+                    <section class="container-articles flex" id="pelis">
+
+                        <% if (peliculas.length>0) { %>
+                            <% peliculas.forEach(pelicula=> { %>
+                                <article class="article flex animate__animated animate__fadeIn">
+                                    <div class="img-container flex">
+                                        <button class="btn-play" id="<%= pelicula.id %> ">
+                                            <img src="/design/images/icons/play-circle-regular.png" alt=""
+                                                onclick="viewTrailer('<%=pelicula.trailer%>')">
+                                        </button>
+                                        <img src="/design/images/products/<%= pelicula.image %>" alt="articulo">
+                                    </div>
+                                    <div class="data-article flex">
+                                        <a href="/peliculas/detalle/<%= pelicula.id %>">
+                                            <div class="titulo">
+                                                <h4 class="noun"><%= pelicula.title %></h4>
+                                            </div>
+                                            <div class="footer-article">
+                                                <i class="fas fa-heart"></i>
+                                                <span class="precio">$ <%= pelicula.price %> </span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </article>
+                            <% }) %>
+                        <% } else { %>
+                            <h2><b>NO HAY RESULTADOS</b></h2>
+                        <% }  %>
+                        
+
+                    </section>
+
+                    <!-- navbar -->
+                    <div class="container-nav in">
+                        <nav class="nav-bar flex">
+                            <div class="contain-category">
+                                <div class="title">
+                                    <h2>CATEGORIAS</h2>
+                                </div>
+                                <ul class="list p-0">
+                                    <% generos.forEach(genero=> { %>
+                                        <li>
+                                              <a href="/peliculas/genero/<%= genero.id %>#pelis"><%= genero.name %></a>
+                                        </li>
+                                        <% }) %>
+                                </ul>
+                            </div>
+
+                            <div class="contain-category">
+                                <div class="title">
+                                    <h2>AÑO</h2>
+                                </div>
+                                <ul id="anios" class="list p-0">
+                                    <% anios.forEach(anio=> { %>
+                                        <li><a href="/peliculas/anio/<%= anio %>#pelis">
+                                                <%= anio %>
+                                            </a></li>
+                                        <% }) %>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </main>
+            <!-- FOOTER -->
+            <%- include('partials/footer1') %>
+
+                           
+                <!-- funcion que maneja el menu desplegable del navBar -->
+              <!--   <script>
+                    let $btnMenu = document.querySelector('header .sub-menu'),
+                        $navBar = document.querySelector('.container-nav.in')
+
+                    function togle() {
+                        $navBar.classList.toggle('active');
+                    }
+
+                    $btnMenu.addEventListener('click', togle);
+                </script> -->
+
+                <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+                <script>
+                    let $inputSearcher = document.querySelector('header .searcher-bar #buscador'),
+                        $searcherBar = document.querySelector('header .searcher-bar');
+
+                    function showPreSearch() {
+                        $searcherBar.classList.add('active')
+                    }
+
+                    // $inputSearcher.addEventListener('focus', showPreSearch)
+
+                </script>
+
+                <script>
+                    function showPreSearch() {
+                        let $searchBar = document.querySelector('header .searcher-bar');
+                        $searchBar.classList.add('active')
+                    }
+                    function hidePreSearch() {
+                        let $searchBar = document.querySelector('header .searcher-bar');
+                        $searchBar.classList.remove('active')
+                    }
+                    // $inputSearch.addEventListener('focusout', hidePreSearch)
+                    // $inputSearch.addEventListener('onchange', showPreSearch)
+
+                </script>
+
+
+                <script>
+                    const viewTrailer = (trailer) => {
+                        Swal.fire({
+                            html: trailer,
+                            showClass: {
+                                popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                                popup: 'animate__animated animate__fadeOutUp'
+                            },
+                            width: '100%',
+                            showConfirmButton : false,
+                            showCloseButton: true
+
+                        })
+                    }
+                  
+                </script>
+    </body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('partials/head', {titulo}) %>
+<body>
+    <%- include('partials/header1')%>
+    <main class="register-form">
+    <div class="capa-fondo">
+        <img src="/design/images/icons/logo.png " alt="">
+        <div class="flexpd" style="width: 55%;">
+            <h1>Te damos la benvenida, <%= session.name %> </h1>
+            <hr>
+            <div class="avatar">
+                <img src="design/images/avatars/<%= session.avatar %>" alt="">
+            </div>   
+
+          <h1>Datos personales</h1>
+          <form action="" method="post"> 
+           <ul>
+              <li><div class="input-container">
+                <input class="input-style" type="name" name="name" placeholder="Ingrese su Nombre" value="<%= locals.old && old.name %>"></div></li>
+              <li><div class="input-container">
+                <input class="input-style" type="surname" name="lastname" placeholder="Ingrese su Apellido" value="<%= locals.old && old.lastname %>"></li>
+              <li><p>Email</p> <%= session.email %> <input type="button" value="editar"> </li>
+              <li><p>Rol</p> <%= session.rol %> <input type="button" value="editar"> </li>
+              <li> <div class="file-avatar">
+                <h4 class="avatar">Cambiar imagen</h4>
+                <input class="input-avatar" type="file" name="avatarimage">
+                <% if (locals.errors && errors.image) { %>
+                    <small class="text-danger"><%= errors.avatarimage.msg %> </small>
+                <% } %> 
+            </div></li>
+            </ul>
+    </div>
+       
+    </div>
+</main>
+           <%- include('partials/footer1') %>  
+
+</body>
+
+</html>

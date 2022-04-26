@@ -1,0 +1,141 @@
+<%- include('adminPartials/head') %>
+
+    <%- include('adminPartials/adminHeader') %>
+
+    </html>
+    <body>
+        <h1>MOVIE CREATE</h1>
+        <div class="container">
+            <form  id="form-front" class="row" action="/admin/products/new" method="POST" enctype="multipart/form-data" >
+                <div class="col-12 col-md-7">
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="">TITLE</label>
+                    
+                            <input type="text" class="form-control" id="inputTitle" placeholder="Titulo de pelicula" name="title" value="<%= locals.old && old.name %>">
+                    <% if (locals.errors && errors.title) { %>
+                        <small class="text-danger"><%= errors.title.msg %> </small>
+                    <% } %>
+                    <span class="error" id="error-title"></span>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="">DIRECTOR</label>
+                            <select id="inputDirection" class="form-select" name="direction" placeholder="Director de pelicula" type="text" value="<%= locals.old && old.name %>">
+                                <% if (locals.errors && errors.direction) { %>
+                                    <small class="text-danger"><%= errors.direction.msg %> </small>   
+                                <% } %>
+                                <span class="error" id="error-Direction"></span>
+                                <% directors.forEach(director=> { %>
+                                    <option name="direction" value="<%=
+                                            director.id %>"><%= director.name %>
+                                                <%= director.lastname %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6  mb-3">
+                            <label for="">DURATION</label>
+                            <input id="input-duration" class="form-control" type="number" placeholder="Ingresá duración" name="length" value="<%= locals.old && old.length %>">
+                            <% if (locals.errors && errors.length) { %>
+                                <small id="error-Duration" class="text-danger"><%= errors.length.msg %> </small>
+                            <% } %>
+                            <span class="error" id="error-Duration"></span>
+                        </div>
+                        <div class="col-12 col-md-6  mb-3">
+                            <label for="">YEAR</label>
+                            <input id="input-year" class="form-control" type="number" name="year" placeholder="Especificar año de estreno" value="<%= locals.old && old.year %>">
+                            <% if (locals.errors && errors.year) { %>
+                                <small class="text-danger"><%= errors.year.msg %> </small>
+                            <% } %>
+                            <span class="error" id="error-year"></span>
+                        </div>
+                        <div class="col-12 col-md-6  mb-3">
+
+                            <label for="">TRAILER</label>
+                            <input id="input-triler" class="form-control" type="text" name="triler" placeholder="Link de triler" value="<%= locals.old && old.triler %>">
+                            <% if (locals.errors && errors.triler) { %>
+                                <small class="text-danger"><%= errors.triler.msg %> </small>
+                            <% } %>
+                            <span class="error" id="error-triler"></span>
+                        </div>
+                        <div class="col-12 col-md-6  mb-3">
+                            <label for="">PRECIO</label>
+                            <input id="input-price" type="number" class="form-control" placeholder="Precio" name="price" value="<%= locals.old && old.price %>">
+                            <% if (locals.errors && errors.price) { %>
+                                <small class="text-danger"><%= errors.price.msg %> </small>
+                            <% } %>
+                            <span class="error" id="error-price"></span>
+                        </div>
+
+                        
+                     
+                      <!-- <div class="img-container" id="img-preview">
+                        
+                        </div>
+                        <input class="form-control mt-3" type="file" id="formFile">
+                        <span id="fileErrors"></span>--> 
+
+
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                               <!-- <div class="col-12 mb-3">--> 
+                                <div class="img-container" id="img-preview">
+                                    <label for="">IMAGE</label>
+                                    <input  type="file" name="image" class="form-control" aria-label="file example" id="formFile" multiple>
+                    <% if (locals.errors && errors.image) { %>
+                        <small class="text-danger"><%= errors.image.msg %> </small>
+                    <% } %>
+                    <span class="error" id="fileErrors"></span>       
+                                </div>
+                                <div class="col-12  mb-3">
+                                    <label for="">SINOPSIS</label>
+                                   
+                                        <textarea id="input-sinopsis" class="form-control" id="validationTextarea" name="sinopsis" required> </textarea><%= locals.old && old.sinopsis %>
+                                        <% if (locals.errors && errors.sinopsis) { %>
+                                            <small class="text-danger"><%= errors.sinopsis.msg %> </small>
+                                        <% } %>
+                                        <span class="error" id="error-sinopsis"></span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6"></div>
+                        </div>
+                     
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-md-5 mb-3">
+                    <div class="row">
+                        <div class="col-12 ">
+                            <label for="">GENRES</label>
+                            <div class="row">
+                                <% genres.forEach(genre=> { %>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="form-check">
+                                            <input id="inputgenres" class="form-check-input" name="checkGenres" type="checkbox" value="<%= genre.id %>"
+                                                id="<%= genre.name %>" name="genres">
+                                            <label class="form-check-label" for="<%= genre.name %>">
+                                                <%= genre.name %>
+                                                <span class="error" id="errorgenres"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                   
+                                    <% }) %>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center mt-2">
+                    <button  class="btn btn-primary" type="submit">Save Movie</button>
+
+                </div>
+
+            </form>
+            <!--<script src="/js/CreateForm.js"></script>-->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        </body>
+        </div>

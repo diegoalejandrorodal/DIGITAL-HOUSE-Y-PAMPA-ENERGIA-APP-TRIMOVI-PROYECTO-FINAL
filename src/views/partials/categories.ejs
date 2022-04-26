@@ -1,0 +1,29 @@
+<div class="container-nav in">
+    <nav class="nav-bar flex">
+        <div class="contain-category">
+            <div class="title">
+                <h2>CATEGORIAS</h2>
+            </div>
+            <ul class="list">
+                <% generos.forEach(genero=> { %>
+                    <li><button id="<%= genero.id %>">
+                            <%= genero.name %>
+                        </button></li>
+                    <% }) %>
+            </ul>
+        </div>
+
+        <div class="contain-category">
+            <div class="title">
+                <h2>AÑO</h2>
+            </div>
+            <ul id="anios" class="list">
+                <% anios.forEach(anio=> { %>
+                    <li><a href="#">
+                            <%= anio %>
+                        </a></li>
+                    <% }) %>
+            </ul>
+        </div>
+    </nav>
+</div>

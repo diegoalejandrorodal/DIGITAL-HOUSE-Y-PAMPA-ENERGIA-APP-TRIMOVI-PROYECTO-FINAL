@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include ('partials/head',{titulo:"carrito"})%>
+   
+    <!--
+        <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+    <link rel="shortcut icon" href="/design/images/icons/logo.png">
+    <link rel="stylesheet" href="/public/css/carrito.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     <title>Carrito de compras</title>
+</head> -->
+   
+<body>
+    <%- include ('partials/header1')%>
+   <!-- <header>
+
+<div class="container-izquierda">
+
+
+
+<nav class="nave">
+    <ul class="menu">
+    <li><a href=""><i class="fa fa-bars"></i></a>
+    <ul class="submenu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Registro</a></li>
+        <li><a href="">Contacto</a></li>
+    </ul></li>
+   
+</ul>
+
+
+</nav>
+  </div>
+</div>
+<div class="header_logo">
+    
+    <a href="home.html" ref="volver"><img src="/public/design/images/icons/logo.png" style="width: 40%;"></a>
+</div>
+
+<div class="container-derecha">
+
+                
+    <div class="icono2"><a href="#"><i class="far fa-heart" style="color: cyan;"></i></a></div>
+    
+    
+    
+    
+    <div class="icono3"><a href="#"><i class="fas fa-user" style="color: cyan;"></i></div></a>
+        </div>
+
+    </header> -->
+     
+
+<body class="container-caja">
+    <h1 class="text-center">Tus compras</h1>
+    <div class="container-flex">
+
+        <section class="shopping-cart">
+            <div class="container">
+                
+                <div class="row1">
+                    <div class="col-6">
+                        <div class="shopping-cart-header">
+                            <h6 class="tipo" style=" font-size: 23px;">Producto</h6>
+                        </div>
+                    </div>
+        
+                    <div class="col-2">
+                        <div class="shopping-cart-header">
+                            <h6 class="tipo1" style=" font-size: 23px; position: relative ; right: 6rem;">Precio</h6>
+                        </div>
+                    </div>
+                    <div class="col-4" id="deletecar">
+                        <div class="shopping-cart-header">
+                            <h6 class="tipo" style=" font-size: 23px; right: 2rem; position: relative;">Eliminar</h6>
+                    
+                        </div>
+                    
+                        
+                    </div>
+                </div>
+                <hr class="gradient">
+               
+
+        <div class="box-shopping">
+            <div class="imgcontainer">
+                <section class="portafolio-item">
+                  <!-- <img src="/design/images/products/Chihiro.jpg" alt="" class="portafolio-img1" style="position:relative; margin-top: 2rem;">
+                    <section class="portafolio-text">
+                        <h2>El viaje de Chihiro</h2>
+                        <p>Aventura</p>
+                    </section>-->
+                </section> 
+      
+                </div>
+                
+</div>
+                
+<p class="number" style= "font-weight: bold;">400$</p>  
+                
+                        
+                        
+                 
+                   
+                    <button type="button" class="btn btn-outline-danger">Borrar</button>
+                    
+                    <div class="imgcontainer">
+                        <section class="portafolio-item">
+                            <img src="/design/images/products/justice-league-dark.jpg" alt="" class="portafolio-img2" style="height: 60px; -webkit-box-shadow: 15px 19px 13px 4px rgba(0,0,0,0.75);
+                            -moz-box-shadow: 15px 19px 13px 4px rgba(0,0,0,0.75);
+                            box-shadow: 15px 19px 13px 4px rgba(0,0,0,0.75);">
+                            <section class="portafolio-text">
+                                <h2>Liga de la justicia oscura</h2>
+                                <p>Acción, aventura</p>
+                            </section>
+                        </section>
+
+
+                        <div class="imgcontainer">
+                            <section class="portafolio-item">
+                                <img src="/design/images/products/Chihiro.png" alt="" class="portafolio-img">
+                                <section class="portafolio-text">
+                                    <h2>El viaje de Chihiro</h2>
+                                    <p>Aventura</p>
+                                </section>
+                            </section>
+
+                    
+                </div>
+                
+                <div class="pre-cant">
+                    <p class="item1" style= "font-weight: bold;">380$</p>
+                    </div>
+                    
+                    
+                    <button type="button" id="btn-borrar" class="btn btn-outline-danger">Borrar</button>
+                    <hr class="gradient2">
+
+                   <div class="container-row-flex">
+                       
+                    <strong class="item-total">Total de compra <i class="fas fa-calculator"></i></strong></div>
+            
+                    <p class="valor">$780</i></p>
+                    <div class="container-verde">
+                        
+                    <buttom Onclick="clic()" class="btn-verdecart"><a  href="/user/payment" ><span style="color: aliceblue;">Terminar</span></a></buttom>
+
+                    
+                    </div>
+
+                    <div class="cupón">
+                        <div class="text">
+                            <input class="cuppon"type="text" placeholder="Cupón de descuento"/>
+                           
+                        </div>
+                   </div>
+                   <div class="containerback">
+                   <div class="containertarjeta">
+                   
+                       <i id="tarjet" class="fa-solid fa-ticket"></i>
+                       <i class="fa-solid fa-ticket"></i>
+               
+                   
+                   </div>
+                   </div>
+                </div> 
+               
+
+                </div>
+                </div>
+                </div>
+
+<!--
+
+       <footer class="container-footer">
+            <div class="info">
+                <ul class="flexitem">
+                    <li><a href="#">Privacidad</li>
+                    <li><a href="#">Términos y condiciones</li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </div>
+            <div class="redes-flex">
+               
+                <ul class="redes">
+                    <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-square" style="color:white"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram" style="color:white"></i></a>
+                    <a href="https://www.google.es/"><i class="fab fa-google" style="color:white"></i></a>
+                
+
+                   
+            </div>
+        </footer> -->
+
+
+
+
+        
+
+    <script > 
+    function clic(){
+        alert("Redirección al pago");
+    }
+    function delette(){
+        alert("Producto eliminado");
+    }
+
+
+    </script>
+    
+
+<%-include('partials/footer1')%>
+
+</body>
+</html>

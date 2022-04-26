@@ -1,0 +1,163 @@
+/*HTML*/
+.login-container {
+  background-image: url('design/images/icons/logo.webp');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+/*HIPERVINCULOS PAGINA DE INICIO Y PAGINA DE REGISTRO*/
+main .login-container {
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, .3)
+}
+
+
+.login-container .login-bottom-page {
+  margin: 20px;
+ /* margin: 20px;*/
+  height: 2.5rem;
+  margin-top: 50px;
+}
+.login-container .aux {
+  width: 210px;
+  height: auto;
+}
+  .Hipervinculos-vistasContainer h1 {
+    margin-left: 650px;
+    margin-top: auto;
+    font-family: montez;
+    font-size: 30px;
+  }
+  .Hipervinculos-vistasContainer a {
+    margin-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    transition: all ease 300ms;
+    background: linear-gradient(45deg, blue 0%, rgba(243, 6, 17, 0.719) 50%);
+    color: rgb(white, yellow);
+    transition: all 0.3s ease-in-out;
+  }
+  .Hipervinculos-vistasContainer a:hover {
+    color: white;
+    box-shadow: 0px 0px 10px yellowgreen;
+  }
+  .login {
+  
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+  }
+  .login-form {
+    background-color: rgba(116, 108, 108, 0.9);
+    margin-top: -100px;
+    width: 100%;
+    height: 35%;
+  }
+
+  .fondo {
+    padding: 10px 0;
+    margin: 50px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border-radius: 5px;
+  }
+  .fondo img {
+    width: 100%;
+    border-radius: 50%;
+    border: solid #fff 5px;
+  }
+  .fondo form {
+    padding: 10px 0;
+    width: 90%;
+  }
+  .fondo form span {
+    margin-right: 0px;
+    background-color: rgba(255, 255, 255, .6);
+    color: #000;
+    border: solid 7px rgba(255, 255, 255, .01);
+    border-bottom: solid 9.5px rgba(255, 255, 255, .01);
+    border-top: solid 9px rgba(255, 255, 255, .01);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .inp {
+    background-color: rgba(255, 255, 255, .1);
+    width: 90%;
+    height: 30px;
+    border: solid 2px rgba(255, 255, 255, .5);
+    font-size: 20px;
+    color: #fff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+    transition: all 250ms ease;
+  }
+  .fondo form .inp:focus {
+    outline: 0px;
+    background-color: rgba(255, 255, 255, .6);
+    border: solid 2px rgba(255, 255, 255, .01);
+    color: #000;
+  }
+  /*BOTONES RECUPERAR CONTRASEÑA Y REGISTRARSE*/
+  .login-container .he {
+    color: white;
+    min-height: 100vh;    
+    background: linear-gradient(to left, #F11712, #0099F7) !important;  
+    font-size: 1rem;
+    padding: 2px;
+    border-radius: 5px;
+  }
+  h3#login-txt {
+    margin: 5px;
+  } 
+  /*REDES SOCIALES*/
+  #redes-container {
+    display: flex;
+    flex-direction: row;
+    transform: scale(0.2);
+  }
+  /*FOOTER*/
+  /*@import url('footer.css');
+  /*Media Query*/
+  @media screen and (min-width: 475px) {
+    .fondo {
+        width: 90%;
+    }
+    .form-container {
+        width: 75%;
+        max-width:1000px;
+    }
+}
+h3#login-txt {
+  margin: 1px;
+} 
+@media screen and (min-width: 768px) {
+  .login {
+  
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+  }
+    .fondo {
+        width: 80%;
+    }
+    .form-container {
+        width: 75%;
+    }
+}

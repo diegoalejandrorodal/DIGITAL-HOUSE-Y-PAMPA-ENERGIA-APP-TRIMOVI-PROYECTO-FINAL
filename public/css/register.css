@@ -1,0 +1,263 @@
+@import url("footer.css");
+
+
+
+.register-form .form-regis {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.register-form .terms {
+  position: relative;
+  color: white;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.register-form .capa-fondo {
+  background-attachment: fixed;
+  background-repeat: space;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-form .capa-fondo img {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.register-form a {
+  color: rgb(255, 255, 255);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.register-form h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 30px;
+}
+
+.register-form hr {
+  height: 2px;
+  margin-bottom: 3rem;
+  width: 100%;
+  background: linear-gradient(90deg, #71aaff, red);
+  border: none;
+}
+
+.register-form .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-form .form-container {
+  /*background: linear-gradient(#71aaff, white);*/
+  background-color: rgba(252, 252, 252, 0.3);
+  border-radius: 20px;
+  margin: 30px auto;
+  height: fit-content;
+  height: -moz-fit-content;
+  padding: 1rem;
+}
+
+/* Form inputs */
+.register-form .file-avatar {
+  overflow: hidden;
+}
+
+.register-form .input-container,
+.register-form .button-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.button-container{
+position: relative;
+right: 3rem;
+}
+.register-form .button-container {
+  align-items: center;
+  width: 90%;
+  position: relative;
+}
+#btnregistro{
+  position: relative;
+  right: 2rem;
+}
+
+.register-form span.error-message {
+  color: red;
+  font-size: 10px;
+  margin: 5px auto;
+  display: none;
+}
+
+.register-form input.input-style {
+  border: none;
+  border-radius: 10px;
+  height: 2.5rem;
+  padding: 0.5rem;
+  background-color: rgba(100, 100, 100, 0.6);
+  color: aliceblue;
+}
+
+.register-form input.input-style::placeholder {
+  color: rgb(228, 228, 228);
+}
+
+.register-form label {
+  font-size: 12px;
+  margin: 5px;
+}
+
+.register-form .input-file-container {
+  background-color: white;
+  border-radius: 2rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.register-form select.input-select {
+  border: none;
+  border-radius: 1rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+}
+
+.register-form input.input-style:focus,
+.register-form .input-file-container,
+.register-form select.input-select:focus {
+  box-shadow: 0 0 6px rgb(255, 255, 255);
+  outline: none;
+}
+
+.register-form .chekk {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.register-form .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 80%;
+}
+
+.register-form .check label {
+  margin-right: 10px;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.register-form .register-form .he {
+  color: white;
+  background-color: red;
+  font-size: 1rem;
+  padding: 3px;
+}
+
+.register-form .btn btn-submit {
+  position: relative;
+  left: 1rem;
+
+}
+
+.register-form .btnn-submit {
+  color: rgb(115, 255, 1);
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  right: 2rem;
+}
+
+.register-form .he:active {
+  border-radius: 6px;
+  transform: scale(0.9);
+}
+
+.register-form .he:hover {
+  background-color: blue;
+}
+
+/* Media queries*/
+/* Tablet */
+
+@media screen and (min-width: 475px) {
+
+  .register-form .input-container,
+  .register-form .button-container,
+  .register-form .input-file-container {
+    width: 90%;
+  }
+
+  .register-form .form-container {
+    width: 75%;
+    max-width: 1000px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .register-form .input-container,
+  .register-form .button-container,
+  .register-form .input-file-container {
+    width: 80%;
+  }
+
+  .register-form .form-container {
+    width: 75%;
+  }
+}
+
+
+
+.register-form .file-avatar {
+  margin: 10px 0;
+}
+
+.register-form .formulario .file-avatar .input-avatar {
+  display: none;
+}
+
+.register-form .formulario .file-avatar {
+  cursor: pointer;
+  padding: 4px;
+}
+
+.register-form .formulario .file-avatar .input-avatar {
+  display: none;
+}
+
+.register-form .avatar {
+  font-size: 18px;
+  margin: inherit;
+}
+
+/* @media (max-width: 490px){
+  .form-regis{
+    width: 4rem;
+    position: relative;
+    right: 4rem;
+  }
+} */

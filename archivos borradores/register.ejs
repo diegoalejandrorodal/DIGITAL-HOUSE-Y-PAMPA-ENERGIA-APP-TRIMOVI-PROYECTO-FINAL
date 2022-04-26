@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Movie - register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <main class="register-form">
+        <div class="capa-fondo">
+            <img src="/design/images/icons/logo.png " alt="">
+            <div class="form-container" style="width: 55%;">
+                <h1>Registro</h1>
+                <hr>
+
+                <form action="/user/register" id="form" method="POST" enctype="multipart/form-data" class="form-ad">
+                    <div class="form-regis">
+
+                        <div class="input-container">
+                            <input class="input-style" id="name" type="name" name="name" placeholder="Ingrese su Nombre"
+                                value="<%= locals.old && old.name %>">
+                            <% if (typeof errors != "undefined" && errors.name) { %>
+                            <span class="text-danger"><%= errors.name.msg %> </span>
+                            <% } %>
+                        </div>
+
+                        <div class="input-container">
+                            <input class="input-style" id="lastname" type="surname" name="lastname" placeholder="Ingrese su Apellido"
+                                value="<%= locals.old && old.lastname %>">
+                            <% if (typeof errors != "undefined" && errors.lastname) { %>
+                            <span class="text-danger"><%= errors.lastname.msg %> </span>
+                            <% } %>
+                        </div>
+
+                        <div class="input-container">
+                            <input class="input-style" id="email" type="email" name="email" placeholder="Ingrese su Email"
+                                value="<%= locals.old && old.email %>">
+                            <% if (typeof errors != "undefined" && errors.email) { %>
+                            <span class="text-danger"><%= errors.email.msg %> </span>
+                            <% } %>
+                        </div>
+
+                        <div class="input-container">
+                            <input class="input-style" id="pass1" type="password" name="pass1" placeholder="Ingrese su Contraseña">
+                            <% if (typeof errors != "undefined" && errors.pass1) { %>
+                            <span class="text-danger"><%= errors.pass1.msg %> </span>
+                            <% } %>
+                        </div>
+
+                        <div class="input-container">
+                            <input class="input-style" type="password" name="pass2" id="pass2"
+                                placeholder="Reingrese su Contraseña">
+                            <% if (typeof errors != "undefined" && errors.pass2) { %>
+                            <span class="text-danger"><%= errors.pass2.msg %> </span>
+                            <% } %>
+                        </div>
+
+                        <div class="file-avatar">
+                            <h1 class="avatar">Ingrese una foto</h1>
+                            <input class="input-avatar" type="file" name="avatarimage">
+                            <% if (locals.errors && errors.image) { %>
+                            <small class="text-danger"><%= errors.avatarimage.msg %> </small>
+                            <% } %>
+                        </div>
+                        <div class="check">
+                            <label class="terms " for="terms">Acepto los <a href="">términos y condiciones</a></label>
+                            <input class="chekk" type="checkbox" name="terms" id="terms">
+                            <% if (locals.errors && errors.terms) { %>
+                                <small class="text-danger"><%= errors.terms.msg %></small>
+                            <% } %>
+
+                        </div>
+                        <div class="button-container">
+                            <span class="error-message">Hubo errores en el envío</span>
+                            <button id="btnregistro" type="submit" class="btn btn-submit">Registrarme</button>
+                        </div>
+
+                        <a class="btnn-submit" href="/user/login">Ya tengo cuenta</a>
+
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('partials/footer1') %>
+    <script src="registerFront.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<header class="flex posicioned">
+
+    <!--  -->
+    <div class="left-container flex">
+        <div class="container-icon flex ">
+            <button class="flex sub-menu" id="">
+                <i class="fas fa-bars fa-size"></i>
+            </button>
+        </div>
+
+        <div class="search-box">
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+            <input type="text" class="input-search" placeholder="Buscar...">
+        </div>
+    </div>
+
+    <div class="container-logo"><a href="/"><img src="/design/images/icons/logo.png" alt="TRIMOVI"></a></div>
+
+    <div class="right-container flex">
+
+        <div class="container-icon flex" id="car">
+            <a href="/user/carrito"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+        <div class="container-icon flex" id="car">
+            <a href="/user/register">Registrarse</a>
+        </div>
+
+        <% if (session) { %>
+            <div class="container-icon flex" id="car">
+                <a href="/user/userProfile">
+                    <img src="./design/images/avatars/<%= user.avatar %>"></a>
+                <a href="/user/userProfile">Mis datos</a>
+                <a href="/user/logout">Cerrar sesión</a>
+                <% if (session.user.rol==="USER_ADMIN" ) { %>
+                    <a href="/admin/dashboard">ADMIN</a>
+                    <% } %>
+
+            </div>
+            <% } else {%>
+                    <div class="container-icon flex">
+                        <a href="/user/login">Entrar</a>
+                    </div>
+                    <% } %>
+
+    </div>
+</header>

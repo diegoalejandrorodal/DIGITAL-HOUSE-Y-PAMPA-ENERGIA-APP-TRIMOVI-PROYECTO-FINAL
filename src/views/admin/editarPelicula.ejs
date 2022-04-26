@@ -1,0 +1,94 @@
+<%- include('adminPartials/head') %>
+
+    <%- include('adminPartials/adminHeader') %>
+        <h1>MOVIE EDIT</h1>
+        <div class="container">
+            <form class="row" action="/admin/products/edit/<%=movie.id%>?_method=PUT" method="POST">
+                <div class="col-12 col-md-7">
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="">TITTLE</label>
+                            <input class="form-control" type="text" name="title" id="title" value="<%=movie.title%>">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="">DIRECTOR</label>
+                            <select class="form-select" name="director" id="director">
+                                <% directors.forEach(director=> { %>
+                                    <option <%=director.id==movie.directorId ? 'selected' : null %> value="<%=
+                                            director.id %>"><%= director.name %>
+                                                <%= director.lastname %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6  mb-3">
+                            <label for="">DURATION</label>
+                            <input class="form-control" type="number" name="length" value="<%= movie.length %>" id="duration">
+                        </div>
+                        <div class="col-12 col-md-6  mb-3">
+                            <label for="">YEAR</label>
+                            <input class="form-control" type="number" name="year" id="year" value="<%= movie.year %>">
+                        </div>
+                        <div class="col-12 col-md-6  mb-3">
+                            <label for="">TRAILER</label>
+                            <input class="form-control" type="text" name="trailer" value="<%=movie.trailer%>" id="trailer">
+                        </div>
+                        <div class="col-12 col-md-6  mb-3">
+                            <label for="">PRICE</label>
+                            <input class="form-control" type="number" name="price" value="<%= movie.price %>" id="price">
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="col-12 col-md-6  mb-3">
+                                    <label for="">IMAGE</label>
+                                    <input class="form-control" type="file" name="image" id="image">
+                                </div>
+                                <div class="col-12  mb-3">
+                                    <label for="">SINOPSIS</label>
+                                    <textarea class="form-control" name="sinopsis" id="sinopsis" cols="30" rows="5"
+                                        style="resize: none;"><%=movie.sinopsis%></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <img src="/design/images/products/<%= movie.image %>" alt="imagen">
+                            </div>
+
+                        </div>
+                      
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-md-5 mb-3">
+                    <div class="row">
+                        <div class="col-12 ">
+                            <label for="">GENRES</label>
+                            <div class="row">
+                                <% genres.forEach(genre=> { %>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="<%= genre.id %>"
+                                                id="<%= genre.name %>" name="genres" <%=(movie.genres.find(genreMovie=>
+                                            genreMovie.id === genre.id)) && 'checked'
+                                            %> >
+                                            <label class="form-check-label" for="<%= genre.name %>">
+                                                <%= genre.name %>
+                                            </label>
+                                        </div>
+                                    </div>
+                                   
+                                    <% }) %>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center mt-2">
+                    <button class="btn btn-primary" type="submit">Edit Movie</button>
+
+                </div>
+
+            </form>
+        </div>

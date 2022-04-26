@@ -1,0 +1,38 @@
+<%- include('header') -%>
+<h1><% movie.title %></h1>
+<ul>
+    <li>
+        duration: <% movie.duration %>
+    </li>
+    <li>
+        year: <% movie.year %>
+    </li>
+    <li>
+        rating: <% movie.rating %>
+    </li>
+    <li>
+        director: <% movie.director %>
+    </li>
+    <li>
+        duration: <% movie.duration %>
+    </li>
+    <li>
+        trailer: <% movie.trailer%>
+    </li>
+    <li>
+        sinopsis: <% movie.sinopsis %>
+    </li>
+    <li>
+        image: <% movie.image %>
+    </li>
+    <li>
+        genres: <% movie.genres.name %>
+    </li>
+</ul>
+<a href="/peliculas/editar/<%=pelicula.id%>">
+<button>EDIT</button>
+</a>
+<form action="/peliculas/borrar/<%=movie.id%>" method="post">
+    <button type="submit">DELETE</button>
+</form>
+<%- include('footer') -%>

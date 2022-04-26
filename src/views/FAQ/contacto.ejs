@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!DOCTYPE html>
+    <html lang="es">
+        <%- include ('../partials/head', {titulo}) %>
+    
+    <body>
+        <%- include ('../partials/header1') %>
+    <main class="register-form">
+        <div class="capa-fondo">
+            <img src="/design/images/icons/logo.png " alt="">
+            <div class="form-container" style="width: 300px;">
+                <h1>Contacto</h1>
+                <hr>
+
+                <form action="/FAQ/gracias.ejs" id="form" method="POST" enctype="multipart/form-data" class="form-ad">
+                    <div class="form-regis">
+
+                        <div class="input-container column">
+                            <input class="input-style" id="name" type="text" name="name" placeholder="Ingrese su nombre">
+                            
+                        </div>
+
+                        <div class="input-container column">
+                            <input class="input-style" id="lastname" type="text" name="name" placeholder="Ingrese su apellido">
+                            
+                        </div>
+                   
+                        <div class="input-container column">
+                            <input class="input-style" id="email" type="email" name="email" placeholder="Ingrese su Email">
+                        </div>
+
+                        <div class="input-container column">
+                            <input class="input-style" id="phone" type="text" name="phone" placeholder="Ingrese su teléfono">
+                        </div>
+
+                        <div class="input-container column">
+
+                            <label class="input-style" for="message">Mensaje</label>
+                          <textarea name="message"></textarea>
+                            
+                      </div>
+                      
+                      <div class="d-flex">  
+                        <button type="submit" class="btn btn-submit" style="margin-right: 10px;">Enviar</button>
+                       
+                    </div>
+
+
+                        
+
+                
+
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include ('../partials/footer1') %>
+
+    </body>
+
+</html>

@@ -1,0 +1,33 @@
+<!-- cambiar -->
+<!DOCTYPE html>
+<html>
+
+<%- include ('../partials/head', {titulo: "TRIMOVI - Recuperar contraseña"})%>
+
+
+<body>
+  <%- include ('../partials/header1')%>
+
+  <main class="login-container fondo">
+
+    <article>
+    <div >
+        <div>
+          <a href="/"><img src="/design/images/icons/header_png" alt="User"></a>
+        </div>
+
+        <form action="https://mail.google.com/mail/u/0/#inbox?compose=new" method="POST">
+          
+          <label for="lostPass">Ingrese su email</label>
+          <input class="inp" type="email" name="lostPass" required="true" placeholder="Ingrese su E-mail">
+          <button type="submit" class="btn btn-submit">Enviar</button>
+           <p>Le enviaremos instrucciones para recuperar su usuario</p>
+
+      </form>
+    </div>
+  </article>
+  </main>
+  <%-include('../partials/footer1')%>
+</body>
+
+</html>

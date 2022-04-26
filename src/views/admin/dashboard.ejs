@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('./adminPartials/head') %> 
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Panel de control</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDarkDropdown"
+          aria-controls="navbarNavDarkDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDarkDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fas fa-bars"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-dark"
+                aria-labelledby="navbarDarkDropdownMenuLink"
+              >
+             
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/admin/products/new"
+                    >Agregar</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/"
+                    >Volver al home</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main >
+      <div class="row">
+        <div class="col-12 col-md-10 mx-auto">
+          <div class="table-responsive m-4">
+            <table class="table" style="font-size: 20px;">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Genero</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Acciones</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <% peliculas.forEach(peli => { %>
+                <tr class="table-active">
+                  <th scope="row"><%= peli.id %> </th>
+                  <td><%= peli.title %> </td>
+                  <td>
+                    <ul>
+                      <% peli.genres.forEach(genre => { %>
+                        <li><%= genre.name %></li>
+                        <% }) %>
+                    </ul>
+                  
+                  </td>
+                  <td>$ <%= peli.price %> </td>
+                  <td >
+                    <div class="d-flex justify-content-around">
+                      <a href="/admin/products/edit/<%= peli.id %>"><button type="button" class="btn btn-success" style="width: 50px;"><i
+                        class="fas fa-pencil-alt"></i></button></a>
+                  <form action="/admin/products/<%= peli.id %>/dlt?_method=DELETE" method="post"> <button type="submit"
+                      class="btn btn-danger" style="width: 50px;"><i class="fas fa-trash"></i></button></a>
+                  </form>
+                    </div>
+                 
+                  </td>
+                </tr>
+                <% }) %>
+        
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+     
+    
+  
+    </main>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

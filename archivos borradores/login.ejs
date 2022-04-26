@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <%- include ('./partials/head') %> 
+<body class="login-body">
+  <main class="login-container">
+
+
+    <div class="login">
+      <div class="login-bottom-page">
+
+      </div>
+      <article class="fondo">
+    
+          <a href="/"><img src="/design/images/icons/logo.png" alt="User"></a>
+        
+        <form class="aux" action="/user/login" id="form" method="POST">
+          
+
+          <span class="icon-user"></span><input class="inp" id="email" type="email" name="email" placeholder="Ingrese su Usuario"><br>
+            
+            <% if (locals.errors && errors.email) { %>
+              <small class="text-danger"> <%= errors.email.msg %>  </small>
+            <% } %>
+          
+        
+            <span class="icon-key"></span>
+          <input class="inp" id="pass" type="password" name="pass" value="" placeholder="Ingrese su Contraseña"><br>
+          <% if (locals.errors && errors.pass) { %>
+            <small class="text-danger"> <%= errors.pass.msg %>  </small>
+        <% } %>
+        <% if (locals.errors && errors.custom) { %>
+          <small class="text-danger"> <%= errors.custom.msg %>  </small>
+        <% } %>
+      
+
+         <div>
+
+          <input type="checkbox" name="remember" id="check">
+          <label for="check">Recordar</label>
+        <br>
+
+         <div><button class="btn btn-submit" type="submit">INICIAR SESION</button>
+        </div>
+        </div>
+      </form>
+
+         <h3 id="login-txt">¿Has olvidado tu contraseña?</h3>
+         <h2><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="he">RECUPERAR CONTRASEÑA</a></h2>
+         <h3 id="login-txt">¿No tienes cuenta aún?</h3>
+         <h2><a href="/user/register" class="he">REGISTRARSE</a></h2> 
+
+
+
+
+      </form>
+
+
+      
+      <div id="redes-container">
+        
+
+     <!-- <div id="redes-container">
+          <a href="https://www.facebook.com" id="loginboxredes"><img src="/design/images/icons/logofacebook.png"></a>
+          <a href="https://www.instagram.com" id="loginboxredes"><img src="/design/images/icons/logoinstagram.png"></a>
+          <a href="https://www.google.com" id="loginboxredes"><img src="/design/images/icons/logogoogle.png"></a>
+      </div>
+      </div>-->
+
+    </div>
+
+  </article>
+
+
+
+  </main>
+  <%-include('./partials/footer1')%>
+  <script src="loginFront.js"></script>
+</body>
+
+</html>

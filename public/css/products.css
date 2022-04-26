@@ -1,0 +1,30 @@
+
+img{
+    width: 130px;
+    position: relative;
+    /* bottom: 5px; */
+}
+    header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: black;
+    
+    
+  }
+   
+  .table{
+      padding: auto;
+      position: relative;
+      left: 15px;
+
+  }
+  
+  
+ 
+  
+
+  
+  
+  

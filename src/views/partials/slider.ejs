@@ -1,0 +1,24 @@
+<section class="special-offers">
+    <h3 class="section__title"><%-  %></h3> 
+    <!-- Product Slider -->
+
+    <div class="gallery productSlider js-flickity" data-flickity-options='{ "wrapAround": true }' >
+        <% sliderProducts.forEach(product => { %>
+            <a href="/products/detail/<%- product.id %>">
+                <div class="carousel-cell  productSlide">
+                    
+                    <img src="/design/images/products/.<%- product.image%>" alt="<%- product.name %>">
+                    <p class="productName"> 
+                        <% if (product.name.length > 30) { %>
+                            <%- `${product.name.slice(0,30)}...` %>
+                        <% } else { %>
+                            <%= product.name %>
+                        <% } %>
+                    </p>
+                   
+                </div>
+            </a>
+        <% }) %>
+    </div>
+
+</section> 

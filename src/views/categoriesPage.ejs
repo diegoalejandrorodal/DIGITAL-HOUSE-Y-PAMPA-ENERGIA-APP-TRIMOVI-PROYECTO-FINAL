@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('partials/head', {titulo}) %>
+</head>
+
+<body>
+    <main class="home-container flex">
+    <section class="flexpd-row">
+
+     <%- include('./partials/header1') %>
+
+
+ <h1><%= genero.name %></h1>
+
+ <aside class="subcategories_menu-desktop">
+    <% categories.forEach(category => { %>
+        <div class="img-container flex">
+            <img src="./design/images/products/<%= pelicula.image %> " alt="<%= pelicula.name %>">
+        </div>
+        <div class="data-article flex">
+            <a href="/products/detail/<%= pelicula.id %>">
+                <h4 class="titulo noun">
+                    <%= pelicula.name %>
+                </h4>
+                <div class="footer-article flex">
+                    <i class="fas fa-heart"></i>
+                    
+                </div>
+            </a>
+    <% }) %>    
+</aside>
+ 
+    
+ </section>
+</main>
+</body>
+</html>

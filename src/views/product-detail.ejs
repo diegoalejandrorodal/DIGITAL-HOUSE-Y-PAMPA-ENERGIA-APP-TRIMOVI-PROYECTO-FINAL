@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%-include('./partials/head', {titulo: movie.name})%>
+
+<body class="product-detail">
+
+    <%- include('./partials/header1')%>
+
+    <main>
+        <section class="container">
+            <div style="height: 20px;">
+
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-10 mx-auto p-3" style="background-color: rgba(255, 255, 255, 0.3);border-radius: 10px;">
+                    <div class="row">
+                        <div class="col-12 col-md-4 my-3">
+                            <div class="w-75 mx-auto">
+                                <img src="/design/images/products/<%= movie.image %>" alt="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 my-3" >
+                            <h2><%= movie.title %> </h2>
+                            <hr>
+                            <p class="small" style="font-size:16px"><%= movie.sinopsis %> </p>
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <ul class="list-group list-group-flush ">
+                                        <li class="list-group-item bg-transparent small text-start"  style="font-size:16px"><b>Director: </b> <%= movie.director.name %> <%= movie.director.lastname %>  </li>
+                                        <li class="list-group-item bg-transparent small text-start"  style="font-size:16px"><b>Duración: </b> <%= movie.length %> minutos</li>
+                                        <li class="list-group-item bg-transparent small text-start"  style="font-size:16px"><b>Generos: </b> <%= movie.genres.map(genre => " " + genre.name ) %> </li>
+                                        <li class="list-group-item bg-transparent small text-start"  style="font-size:16px"><b>Año: </b> <%= movie.year %></li>
+                                      </ul>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h2 class="display-5">$ <%= movie.price %> </h2>
+                                     <div class="info-sell">
+                                        <div class="wish"><a href="" class="text-white h3"><i class="far fa-heart"></i></a> </div>
+                                        <div class="buy">
+                                            <a href="/user/carrito">COMPRAR</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                  
+                </div>
+                <div class="col-12 col-md-10 mx-auto p-3 my-3" style="background-color: rgba(255, 255, 255, 0.3);border-radius: 10px;">
+                    
+                    <div class="row">
+                        <%- movie.trailer %>
+                    </div>
+                  
+                </div>
+            </div>
+              
+    </main>
+
+    <%- include ("./partials/footer1")%>
+
+
+    <script src="/js/productDetail.js"></script>
+    <script src="/js/product-slider.js"></script>
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+
+</html>

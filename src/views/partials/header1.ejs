@@ -1,0 +1,62 @@
+<header class="d-flex flex-column flex-md-row justify-content-between py-3 py-lg-0 px-md-3">
+
+
+
+    <!-- buscador -->
+    <div class="d-flex">
+        <form action="/peliculas/search" method="GET">
+            <input type="text" class="input-search" placeholder="Buscar..." name="search">
+            <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
+        </form>
+
+    </div>
+
+    <!-- logo trimovi -->
+    <div class="container-logo" style="width: 150px;"><a href="/"><img src="/design/images/icons/logo.png" alt="TRIMOVI"></a></div>
+
+  
+
+        <!-- icono de ususario/login -->
+        <% if (!locals.session) { %>
+            <div class="">
+                <button class="raise mx-2"><a class="raiss" href="/user/login">Iniciar sesión</a></button>
+                <button class="raise mx-2"><a class="raiss" href="/user/register">Registrate</a></button>
+
+            </div>
+            <% } else { %>
+                <div class="d-flex flex-column text-white">
+                    <p>
+                        <%= session.name %>
+                    </p>
+                    <div>
+                        <% if (session.rol === 1) { %>
+                            <a class="text-white h4 mx-2" href="/admin"><i class="fas fa-user-cog"></i></a>
+
+                        <% } %>
+                        <a class="text-white h4 mx-2" href="/user/carrito"><i class="fas fa-shopping-cart"></i></a>
+                        <a class="text-white h4 mx-2" href="/user/profile"><i class="fas fa-user"></i></a>
+                        <a class="text-white h4 mx-2" href="/user/logout"><i class="fas fa-sign-out-alt"></i></a>
+                    </div>
+                </div>
+                <% } %>
+
+</header>
+
+<script defer>
+    window.onload = e => {
+        // alert('evento capturado')
+        const $formSearch = document.querySelector('header form');
+
+        $formSearch.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            const content = e.target.querySelector('input').value;
+            // console.log(content)
+            if(content.trim() != "") {
+                e.target.submit();
+            }
+            
+        })
+            
+    }
+</script>
